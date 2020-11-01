@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Apr 08 22:56:34 CST 2020
+easytrade-common-1.0.0-javadoc.jar>=
+easytrade-common-1.0.0.pom>=
+easytrade-common-1.0.0-sources.jar>=
+easytrade-common-1.0.0.jar>=

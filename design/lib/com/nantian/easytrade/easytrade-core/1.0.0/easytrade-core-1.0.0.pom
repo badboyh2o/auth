@@ -1,0 +1,174 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+  	<groupId>com.nantian.easytrade</groupId>
+  	<artifactId>easytrade-core</artifactId>
+  	<version>1.0.0</version>
+  	<name>easytrade-core</name>
+  	<url>http://maven.apache.org</url>
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<!-- jar version -->
+		<junit.version>3.8.1</junit.version>
+		<com.nantian.common.version>1.0.0</com.nantian.common.version>
+		<javax.servlet.version>3.1.0</javax.servlet.version>
+		<com.alibaba.fastjson.version>1.2.56</com.alibaba.fastjson.version>
+		<slf4j.version>1.7.25</slf4j.version>
+		<common.fileupload.version>1.3.3</common.fileupload.version>
+		<common.io.version>2.4</common.io.version>
+		<spring.version>4.0.0.RELEASE</spring.version>
+		<okhttp.version>3.11.0</okhttp.version>
+		<guava.version>20.0</guava.version>
+		<httpcore.version>4.4.10</httpcore.version>
+		<httpclient.version>4.5.6</httpclient.version>
+		<httpclientutil.version>1.0.4</httpclientutil.version>
+
+		<net.iharder.base64.version>2.3.8</net.iharder.base64.version>
+		<commons-codec.version>1.11</commons-codec.version>
+		<!-- plugins version -->
+		<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
+		<maven.javadoc.plugin.version>3.1.0</maven.javadoc.plugin.version>
+		<maven.source.plugin.version>3.0.1</maven.source.plugin.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+		  <groupId>junit</groupId>
+		  <artifactId>junit</artifactId>
+		  <version>${junit.version}</version>
+		  <scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.nantian.easytrade</groupId>
+			<artifactId>easytrade-common</artifactId>
+			<version>${com.nantian.common.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${com.alibaba.fastjson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${common.fileupload.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${common.io.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>net.iharder</groupId>
+		  <artifactId>base64</artifactId>
+		  <version>${net.iharder.base64.version}</version>
+		</dependency>
+
+		<dependency>
+		  <groupId>commons-codec</groupId>
+		  <artifactId>commons-codec</artifactId>
+		  <version>${commons-codec.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>${okhttp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>${httpcore.version}</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${httpclient.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.arronlong</groupId>
+			<artifactId>httpclientutil</artifactId>
+			<version>${httpclientutil.version}</version>
+		</dependency>
+	</dependencies>
+  <build>
+    <finalName>easytrade-core</finalName>
+    <plugins>
+		<!--生成doc jar包-->
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-javadoc-plugin</artifactId>
+			<version>${maven.javadoc.plugin.version}</version>
+		    <executions>
+		        <execution>
+		            <id>attach-javadocs</id>
+		            <goals>
+		                <goal>jar</goal>
+		            </goals>
+		        </execution>
+		    </executions>
+		</plugin>
+		<!--生成源码jar包-->
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-source-plugin</artifactId>
+			<version>${maven.source.plugin.version}</version>
+		    <executions>
+		        <execution>
+		            <id>attach-sources</id>
+		            <goals>
+		                <goal>jar</goal>
+		            </goals>
+		        </execution>
+		    </executions>
+		</plugin>
+	</plugins>
+  </build>
+
+</project>
